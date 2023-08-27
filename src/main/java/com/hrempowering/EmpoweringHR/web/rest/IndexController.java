@@ -1,21 +1,45 @@
 package com.hrempowering.EmpoweringHR.web.rest;
 
+import com.hrempowering.EmpoweringHR.service.EmployeeService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class IndexController {
 
-    @GetMapping("/map")
-    public String index(Model model) {
+    private final EmployeeService employeeService;
+
+    @Autowired
+    public IndexController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+
+    @GetMapping("/")
+    public String index(Model model, HttpServletRequest request) {
+        String urlPath = request.getRequestURI();
+        model.addAttribute("urlPath", urlPath);
+        model.addAttribute("employees", employeeService.getAllEmployees());
         return "map";
     }
 
-    @GetMapping("/")
-    public String index_2(Model model) {
+    @GetMapping("/team")
+    public String team(Model model, HttpServletRequest request) {
+        String urlPath = request.getRequestURI();
+        model.addAttribute("urlPath", urlPath);
+        model.addAttribute("employees", employeeService.getAllEmployees());
         return "map";
     }
+
+    @GetMapping("/employees")
+    public String contacts(Model model, HttpServletRequest request) {
+        String urlPath = request.getRequestURI();
+        model.addAttribute("urlPath", urlPath);
+        model.addAttribute("employees", employeeService.getAllEmployees());
+        return "map";
+    }
+
 }

@@ -2,7 +2,7 @@
     <div id="sidebar" class="sidebar sidebar-with-footer">
         <!-- Aplication Brand -->
         <div class="app-brand">
-            <a href="/index.html">
+            <a th:href="@{/}">
                 <img src="images/logo.png" alt="Mono">
                 <span class="brand-name">Empowering HR</span>
             </a>
@@ -15,14 +15,14 @@
                     EM Dashboard
                 </li>
                 <li>
-                    <a class="sidenav-item-link" href="contacts.html">
+                    <a class="sidenav-item-link" th:href="@{/employees}">
                         <i class="mdi mdi-account-group"></i>
                         <span class="nav-text">Employee List</span>
                     </a>
                 </li>
 
                 <li>
-                    <a class="sidenav-item-link" href="team.html">
+                    <a class="sidenav-item-link" th:href="@{/team}">
                         <i class="mdi mdi-account-group"></i>
                         <span class="nav-text">Team</span>
                     </a>
