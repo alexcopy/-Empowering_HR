@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Empowering HR Platform</title>
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="plugins/nprogress/nprogress.js"></script>
+</head>
+
+
+<body class="navbar-fixed sidebar-fixed" id="body">
+<script>
+    NProgress.configure({showSpinner: false});
+    NProgress.start();
+</script>
+
+<!-- ====================================
+——— WRAPPER
+===================================== -->
+<div class="wrapper">
+    <div th:replace="fragments/sidebar"></div>
+
+    <!-- ====================================
+    ——— PAGE WRAPPER
+    ===================================== -->
+    <div class="page-wrapper">
+                <div th:replace="fragments/header"></div>
+
+        <!-- ====================================
+        ——— CONTENT WRAPPER
+        ===================================== -->
+        <div class="content-wrapper">
+            <div class="content">
+                <div th:replace="fragments/content_test"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div th:replace="fragments/card"></div>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/simplebar/simplebar.min.js"></script>
+    <script src="plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="plugins/daterangepicker/moment.min.js"></script>
+    <script src="plugins/toaster/toastr.min.js"></script>
+    <script src="js/mono.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+</html>
