@@ -29,22 +29,22 @@ public class Employee {
     private String roleId;
 
     @Column(nullable = false)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
-    private String pto;
+    private Integer pto;
 
     @Column(nullable = false)
-    private String employment_type;
+    private Date dateOfBirth;
 
     @Column(nullable = false)
-    private Date date_of_birth;
+    private Date startDate;
 
     @Column(nullable = false)
-    private Date start_date;
+    private String location;
 
     @Column(nullable = false)
     private String picture;
@@ -56,4 +56,5 @@ public class Employee {
     @Column(name = "LastModifiedAt", insertable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date LastModifiedAt;
+
 }
