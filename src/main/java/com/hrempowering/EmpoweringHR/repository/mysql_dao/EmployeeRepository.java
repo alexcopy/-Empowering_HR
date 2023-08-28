@@ -16,9 +16,11 @@ public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
     void deleteById(int id);
 
-    List<Employee> findByNameOrderById(String name);
+    List<Employee> findByFirstNameOrderById(String firstName);
 
-    List<Employee> findByNameIgnoreCaseContaining(String name);
+    List<Employee> findByLastNameOrderById(String firstName);
 
-    List<Employee> findByRoleId(String roleId);
+    List<Employee> findByLastNameIgnoreCaseContaining(String name);
+
+    List<Employee> findByRoleName(String roleId);
 }

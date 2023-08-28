@@ -32,7 +32,6 @@ public class DataSeeder {
             "images/user/u-xl-7.jpg",
             "images/user/u-xl-8.jpg",
             "images/user/u-xl-9.jpg",
-            "images/user/user-bg-01.jpg",
             "images/user/user-md-01.jpg",
             "images/user/user-md-1.jpg",
             "images/user/user-md-2.jpg",
@@ -60,12 +59,13 @@ public class DataSeeder {
 
         for (int i = 0; i < 50; i++) {
             Employee employee = new Employee();
-            employee.setName(faker.name().fullName());
-            employee.setRoleId(faker.job().position());
+            employee.setFirstName(faker.funnyName().name());
+            employee.setLastName(faker.funnyName().name());
+            employee.setRoleName(faker.job().position());
             employee.setPhoneNumber(faker.phoneNumber().cellPhone());
             employee.setEmail(faker.internet().emailAddress());
             employee.setPto(faker.number().numberBetween(1, 100));
-            employee.setRoleId(faker.job().seniority());
+            employee.setRoleName(faker.job().seniority());
             employee.setDateOfBirth(faker.date().birthday());
             employee.setLocation(faker.address().cityName());
             Date startDateMin = dateFormat.parse("2010-01-01");

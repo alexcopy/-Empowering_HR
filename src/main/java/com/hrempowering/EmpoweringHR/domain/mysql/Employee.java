@@ -2,11 +2,11 @@ package com.hrempowering.EmpoweringHR.domain.mysql;
 
 
 import jakarta.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -23,10 +23,11 @@ public class Employee {
     private int id;
 
     @Column(nullable = false)
-    private String name;
+    private String firstName;
+    private String lastName;
 
     @Column(nullable = false)
-    private String roleId;
+    private String roleName;
 
     @Column(nullable = false)
     private String phoneNumber;
@@ -34,13 +35,15 @@ public class Employee {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "INT default 20")
     private Integer pto;
 
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Column(nullable = false)
     private Date dateOfBirth;
 
     @Column(nullable = false)
+    @CreationTimestamp
     private Date startDate;
 
     @Column(nullable = false)

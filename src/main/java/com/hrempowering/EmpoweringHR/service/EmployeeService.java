@@ -39,17 +39,25 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    public Collection<Employee> findByNameOrderById(String name) {
-        return employeeRepository.findByNameOrderById(name);
+    public Collection<Employee> findByFirstNameOrderById(String name) {
+        return employeeRepository.findByFirstNameOrderById(name);
+    }
+
+    public Collection<Employee> findByLastNameOrderById(String name) {
+        return employeeRepository.findByLastNameOrderById(name);
     }
 
     public List<Employee> getEmployeesByName(String name) {
-        return employeeRepository.findByNameIgnoreCaseContaining(name);
+        return employeeRepository.findByLastNameIgnoreCaseContaining(name);
     }
 
-    public List<Employee> getEmployeesByRoleId(String roleId) {
-        return employeeRepository.findByRoleId(roleId);
+    public List<Employee> getEmployeesByRoleName(String roleId) {
+        return employeeRepository.findByRoleName(roleId);
     }
 
+
+    public void addEmployee(Employee employee) {
+        employeeRepository.save(employee);
+    }
 
 }
