@@ -29,8 +29,8 @@
 
                 <tr th:each="employee : ${employees}">
                     <td class="py-0"><img th:src="${employee.picture}" alt="Employee Picture"></td>
-                    <td th:text="${employee.name}"></td>
-                    <td th:text="${employee.roleId}"></td>
+                    <td th:text="${employee.firstName + ' ' + employee.lastName}"></td>
+                    <td th:text="${employee.roleName}"></td>
                     <td th:text="${employee.phoneNumber}"></td>
                     <td th:text="${employee.email}"></td>
                     <td class="py-0" th:text="${#dates.format(employee.dateOfBirth, 'yyyy-MM-dd')}"></td>
