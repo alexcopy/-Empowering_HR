@@ -49,7 +49,7 @@ public class Employee {
     @Column(nullable = false)
     private String location;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String picture;
 
     @Column(name = "CreatedAt", nullable = false, updatable = false)

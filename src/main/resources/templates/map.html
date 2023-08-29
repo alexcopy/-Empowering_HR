@@ -29,13 +29,18 @@
 
             <div th:if="${urlPath == '/'}">
                 <div th:replace="~{fragments/content_test}"></div>
+                <div th:replace="~{fragments/modal_create}"></div>
             </div>
             <div th:if="${urlPath == '/employees'}">
                 <div th:replace="~{fragments/employees}"></div>
             </div>
 
             <div th:if="${urlPath == '/team'}">
-                <div th:replace="~{fragments/team}"></div>
+                <div class="content">
+                    <div th:replace="~{fragments/team}"></div>
+                    <div th:replace="~{fragments/modal_edit}"></div>
+                    <div th:replace="~{fragments/modal_create}"></div>
+                </div>
             </div>
 
 
