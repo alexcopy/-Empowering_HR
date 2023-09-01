@@ -28,11 +28,14 @@
         <div class="content-wrapper">
 
             <div th:if="${urlPath == '/'}">
-                <div th:replace="~{fragments/content_test}"></div>
+                <div th:replace="~{fragments/content}"></div>
                 <div th:replace="~{fragments/modal_create}"></div>
+                <div th:replace="~{fragments/modal_edit}"></div>
             </div>
             <div th:if="${urlPath == '/employees'}">
-                <div th:replace="~{fragments/employees}"></div>
+                <div th:replace="~{fragments/content}"></div>
+                <div th:replace="~{fragments/modal_create}"></div>
+                <div th:replace="~{fragments/modal_edit}"></div>
             </div>
 
             <div th:if="${urlPath == '/team'}">
