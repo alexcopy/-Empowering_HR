@@ -24,6 +24,7 @@ public class Employee {
 
     @Column(nullable = false)
     private String firstName;
+
     private String lastName;
 
     @Column(nullable = false)

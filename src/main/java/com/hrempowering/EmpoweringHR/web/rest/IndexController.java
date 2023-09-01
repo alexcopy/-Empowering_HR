@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -85,9 +83,15 @@ public class IndexController {
     @GetMapping("/employees")
     public String contacts(Model model, HttpServletRequest request) {
         String urlPath = request.getRequestURI();
+
         model.addAttribute("urlPath", urlPath);
         model.addAttribute("employees", employeeService.getAllEmployees());
         return "map";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee( @PathVariable Integer id) {
+        employeeService.deleteEmployee(id);
+        return "redirect:/employees";
+    }
 }
