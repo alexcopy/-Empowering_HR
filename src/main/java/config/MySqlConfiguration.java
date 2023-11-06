@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 
 @Configuration
-@PropertySource("classpath:mysql-config.properties")
+@PropertySource("classpath:application.properties")
 @EnableJpaRepositories(basePackages = "com.hrempowering.EmpoweringHR.repository.mysql_dao", entityManagerFactoryRef = "mysqlEntityManager", transactionManagerRef = "mysqlTransactionManager")
 public class MySqlConfiguration {
 
