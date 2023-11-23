@@ -3,9 +3,6 @@ package com.hrempowering.EmpoweringHR.seeders;
 import com.github.javafaker.Faker;
 import com.hrempowering.EmpoweringHR.domain.mysql.Employee;
 import com.hrempowering.EmpoweringHR.repository.mysql_dao.EmployeeRepository;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Component
+//@Component
 public class DataSeeder {
 
     private final EmployeeRepository employeeRepository;
@@ -47,13 +44,13 @@ public class DataSeeder {
             "images/user/user-xs-01.jpg"
     );
 
-    @Autowired
+//    @Autowired
     public DataSeeder(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
         this.faker = new Faker(); // Initialize Faker instance
     }
 
-    @PostConstruct
+//    @PostConstruct
     public void seedData() throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 

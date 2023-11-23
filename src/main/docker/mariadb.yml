@@ -1,8 +1,8 @@
 version: '2'
 services:
-    students-mariadb:
-        container_name: students-mariadb
-        image: mariadb:10.3.7
+    empower-db:
+        container_name: empower-db
+        image: mariadb:latest
 
         environment:
             #            - MYSQL_HOST: localhost
@@ -10,16 +10,16 @@ services:
             - MYSQL_ROOT_PASSWORD=test123
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
             - MYSQL_DATABASE=empoweringhr
-            - SPRING_MYSQL_JDBC_URL=jdbc:mysql://172.10.18.2:3386/empoweringhr?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_MYSQL_JDBC_URL=jdbc:mysql://172.10.20.2:3306/empoweringhr?useUnicode=true&characterEncoding=utf8&useSSL=false
 
 
         volumes:
-            - "./volumes/students/mysql_init.sql:/usr/local/bin/mysql_init.sql"
-            - "./volumes/students/mysql_init.sql:/docker-entrypoint-initdb.d/dump.sql"
+            - "./volumes/init/init.sql:/usr/local/bin/mysql_init.sql"
+            - "./volumes/init/seed.sql:/docker-entrypoint-initdb.d/dump.sql"
         ports:
-        - 3386:3306
+        - 3306:3306
 
-#   docker run -d --name empower-mysql --network empowering-netwrk  --ip 192.168.99.108 -e MYSQL_ROOT_PASSWORD=test123 -p 3386:3306 -v  EmpoweringHR/src/main/docker/init.sql:/docker-entrypoint-initdb.d/init.sql mysql:latest
+#   docker run -d --name empower-mysql --network empowering-netwrk  --ip 192.168.99.108 -e MYSQL_ROOT_PASSWORD=test123 -p 3306:3306 -v  EmpoweringHR/src/main/docker/init.sql:/docker-entrypoint-initdb.d/init.sql mysql:latest
 
 
 

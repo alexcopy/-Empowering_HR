@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS test;
+DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';
+DELETE FROM mysql.user WHERE User='' OR User='anonymous';
+FLUSH PRIVILEGES;
 CREATE USER 'empower'@'%' IDENTIFIED BY 'test123';
 GRANT ALL PRIVILEGES ON *.* TO 'empower'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
