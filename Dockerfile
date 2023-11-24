@@ -9,7 +9,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
 ADD . /code/
 ADD . /app/
 # package the application and delete all lib
-COPY target/*.war /app/app.war
+#COPY target/*.war /app/app.war
 
 VOLUME /tmp
 
