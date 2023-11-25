@@ -1,15 +1,19 @@
-FROM openjdk:22
+FROM openjdk:20
 
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
-    EMPOW_SLEEP=0 \
+    EMPOW_SLEEP=10 \
     JAVA_OPTS=""
 
 # add source
 
 ADD . /code/
-ADD . /app/
-# package the application and delete all lib
-#COPY target/*.war /app/app.war
+
+RUN cd /code/ && \
+    ./mvnw clean package  -DskipTests && \
+    mv /code/target/*.jar /app.jar && \
+    rm -Rf /code  /tmp && \
+    rm -Rf /root/.m2/
+
 
 VOLUME /tmp
 
@@ -19,5 +23,5 @@ EXPOSE 8081:8888
 
 CMD echo "The application will start in ${EMPOW_SLEEP}s..." && \
     sleep ${EMPOW_SLEEP} && \
-    java -Djava.security.egd=file:/dev/./urandom -jar /app/app.war
+    java -Djava.security.egd=file:/dev/./urandom -jar /app/app.jar
 

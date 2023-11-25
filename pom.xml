@@ -11,7 +11,7 @@
     <groupId>com.hrempowering</groupId>
     <artifactId>EmpoweringHR</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>EmpoweringHR</name>
     <description>Empowering HR</description>
     <properties>
