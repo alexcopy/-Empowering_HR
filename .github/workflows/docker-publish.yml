@@ -19,7 +19,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
   # github.repository as <account>/<repo>
-  IMAGE_NAME: redcopy/empower-hr:latest
+  IMAGE_NAME: redcopy/empower-hr
 
 
 jobs:
