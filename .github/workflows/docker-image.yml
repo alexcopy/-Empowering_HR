@@ -11,7 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      DOCKER_USERNAME: redcopy
     steps:
     - uses: actions/checkout@v3
      # Log in to Docker registry using secrets
