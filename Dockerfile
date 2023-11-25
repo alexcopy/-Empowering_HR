@@ -14,7 +14,8 @@ RUN cd /code/ && \
     rm -Rf /code  /tmp && \
     rm -Rf /root/.m2/
 
-
+RUN mkdir -p /app/target/classes/static/images/uploads
+RUN mkdir -p /app/classes/static/images/uploads
 VOLUME /tmp
 
 EXPOSE 8080:8080
