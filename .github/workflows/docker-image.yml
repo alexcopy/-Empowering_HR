@@ -29,12 +29,12 @@ jobs:
       
     - name: Fetch project details
       id: project-details
-      run: echo "::set-output name=project-name::My Awesome Project"
+      run: echo "::set-output name=project-name::Empowering HR"
       
     - name: Send Slack notification
       env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: |
           curl -X POST -H 'Content-type: application/json' --data '{
-            "text": "✨🚀 *Notification for Project:* ${{ steps.project-details.outputs.project-name }} - *Docker Build Successful!* 🎉🔥"
+          "text": "✨🚀 * Urgent !! \n Notification for Project:* ${{ steps.project-details.outputs.project-name }}\n*Build Status:* Docker Build Successful! 🎉🔥"
           }' $SLACK_WEBHOOK_URL
