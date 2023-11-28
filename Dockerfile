@@ -10,7 +10,7 @@ ADD . /code/
 
 RUN cd /code/ && \
     ./mvnw clean package  -DskipTests && \
-    mv /code/target/*.jar /app.jar && \
+    mv /code/target/*.jar /app/app.jar && \
     rm -Rf /code  /tmp && \
     rm -Rf /root/.m2/
 
