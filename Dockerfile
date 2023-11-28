@@ -14,16 +14,12 @@ RUN cd /code/ && \
     rm -Rf /code  /tmp && \
     rm -Rf /root/.m2/
 
-
 VOLUME /tmp
 
 RUN mkdir -p /app/target/classes/static/images/uploads
 RUN mkdir -p /app/classes/static/images/uploads
 
-
 EXPOSE 8080:8080
-EXPOSE 8081:8888
-
 
 CMD echo "The application will start in ${EMPOW_SLEEP}s..." && \
     sleep ${EMPOW_SLEEP} && \
